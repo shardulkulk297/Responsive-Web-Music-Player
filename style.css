@@ -159,5 +159,47 @@ body{
 }
 
 
+.Signupbtn{
+    background-color:  rgb(34, 34, 34);
+    color: rgb(128, 127, 127);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+
+
+}
+
+.buttons > * {
+    margin: 0 12px;
+
+}
+.Signupbtn:hover{
+    font-size: 17px;
+    color: white;
+    
+
+}
+
+.Loginbtn
+{
+    background-color: white;
+    border: none;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 79px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.Loginbtn:hover{
+    font-size: 17px;
+    font-weight: bold;
+    
+}
  
 
