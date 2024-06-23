@@ -1,7 +1,9 @@
 .border
 {
-    border: 2px solid red;
-    margin: 3px;
+    border: 2px solid red; 
+    margin: 3px; 
+
+    
 }
 
 .flex{
@@ -17,11 +19,46 @@
     align-items: center;
 }
 
-.roudned{
-    border-radius: 7px;
+.rounded{
+    border-radius: 15px;
 
 }
 
 .m-1{
     margin: 5px;
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Dark background color of the track */
+    border-radius: 6px; /* Rounding corners of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a; /* Dark gray color of the thumb */
+    border-radius: 6px; /* Rounding corners of the thumb */
+    border: 3px solid #2c2c2c; /* Adds space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #737373; /* Lighter gray when hovered */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #5a5a5a #2c2c2c; /* Thumb color and track color */
+}
+
+/* For Internet Explorer and Edge */
+body {
+    -ms-overflow-style: none; /* Hide default scrollbar in IE/Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar in Chrome/Safari */
 }
