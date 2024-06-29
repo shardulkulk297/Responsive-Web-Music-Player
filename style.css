@@ -125,7 +125,7 @@ body {
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 70vh;
     scroll-behavior: auto;
 
@@ -225,7 +225,6 @@ body {
     padding: 12px;
     width: 70vw;
     min-height: 40px;
-    height: 40px;
 
 
 }
@@ -334,3 +333,63 @@ body {
     margin: 20px 0;
     width: 100%;
 }
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburgerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+
+
+
+@media (max-width: 1400px) {
+    .left{
+        /* background-color: red; */
+        position: absolute;
+        left: -120%;
+        transition: all .3s;
+        z-index: 1;
+        width: 370px;
+        background-color: black;
+    }
+
+    .left .close {
+        position: absolute;
+        right: 31px;
+        top: 25px;
+        width: 29px;
+    }
+    .right{
+
+        width: 100vw;
+
+    }
+    
+    .playbar{
+        width: 90vw;
+        
+        
+    }
+
+    .seekbar{
+        width: 90%;
+    }
+
+    .hamburger{
+        display: block;
+        
+    }
+    
+    
+    
+    
+}
+
+
