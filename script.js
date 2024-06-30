@@ -1,5 +1,6 @@
 let currentSong = new Audio();
 let songs;
+let currentFolder;
 function secondsToMinutes(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return "00:00";
@@ -14,8 +15,10 @@ function secondsToMinutes(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:5500/songs/");
+async function getSongs(folder) {
+    currentFolder = folder;
+    let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+    
     let response = await a.text()
 
     let div = document.createElement("div");
@@ -27,7 +30,7 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1]);
+            songs.push(element.href.split(`/${folder}/`)[1]);
         }
 
     }
@@ -39,7 +42,7 @@ async function getSongs() {
 const playMusic = ((track, pause = false) => {
     // let audio = new Audio("/songs/" + track)
 
-    currentSong.src = "/songs/" + track
+    currentSong.src = `/${currentFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "pause.svg"
@@ -57,7 +60,7 @@ async function main() {
 
 
     //getting the list of all the songs
-    songs = await getSongs();
+    songs = await getSongs("songs/mysongs");
 
     playMusic(songs[0], true)
 
@@ -178,6 +181,16 @@ document.querySelector(".range").getElementsByTagName("input")[0].addEventListen
 })
 
 
+//load the playlist when the card is clicked
+
+Array.from(document.getElementsByClassName("card")).forEach(e=>{
+    e.addEventListener("click", async item=>{
+        console.log(item.currentTarget.dataset);
+        songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+
+         
+    })
+})
 
 }
 

@@ -131,6 +131,7 @@ body {
     overflow-y: auto;
     max-height: 70vh;
     scroll-behavior: auto;
+ 
 
 }
 
@@ -140,6 +141,14 @@ body {
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all 0.96s;
+}
+
+
+.card:hover{
+    background-color: rgb(114, 114, 114);
+    cursor: pointer;
+    --a: 1;
 }
 
 .card>* {
@@ -160,14 +169,16 @@ body {
     background-color: green;
     border-radius: 50%;
     padding: 5px;
-
     position: absolute;
-    top: 168px;
+    top: 170px;
     right: 17px;
-    opacity: 0;
-    transition: all 1s ease-out;
+    opacity: var(--a);
+    transition: all 0.5s ease-out;
+    bottom: 0;
+    cursor: pointer;
 
 }
+
 
 
 .Signupbtn {
@@ -562,6 +573,10 @@ body {
 
     .left{
         padding: 0;
+    }
+
+    .play{
+        top: 200px;
     }
 
 
