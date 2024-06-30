@@ -120,6 +120,9 @@ body {
     padding: 16px;
 }
 
+.spotifyPlaylists h1{
+    padding: 16px;
+}
 .cardContainer {
     display: flex;
     gap: 10px;
@@ -221,7 +224,7 @@ body {
     filter: invert(1);
     background: #e2d9d9;
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     padding: 12px;
     width: 70vw;
     min-height: 40px;
@@ -319,10 +322,24 @@ body {
     padding: 0 12px;
 
 }
+
+.timevol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .songinfo {
     color: black;
     padding: 0 12px;
     width: 250px;
+}
+
+.volume{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -345,6 +362,15 @@ body {
     align-items: center;
     gap: 14px;
 }
+
+.left .close {
+    position: absolute;
+    right: 31px;
+    top: 25px;
+    width: 29px;
+}
+
+
 
 
 
@@ -373,7 +399,7 @@ body {
     }
     
     .playbar{
-        width: 90vw;
+        width: calc(100vw - 60px);
         
         
     }
@@ -386,10 +412,165 @@ body {
         display: block;
         
     }
+
+    .abovebar{
+        margin: 10px 0;
+    }
+    .abovebar{
+        flex-direction: column;
+        gap: 23px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .songinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0 12px;
+    width: 250px;
+    width: 100%;
     
+    }
+
+    
+
+
+    .seekbar{
+        width: calc(100vw - 50px);
+    }
+    .songbuttons{
+        margin-right: 30px;
+    }
+
+   
+    .cardContainer{
+        justify-content: center;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .card{
+        width: 44vw;
+    }
+    .right{
+        margin: 0;
+    }
+    .info div{
+        word-break: break-all;
+    }
+
     
     
     
 }
+
+@media (max-width: 700px) {
+    .left{
+        /* background-color: red; */
+        position: absolute;
+        left: -120%;
+        transition: all .3s;
+        z-index: 1;
+        width: 270px;
+        background-color: black;
+    }
+
+    .songinfo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        padding: 0 12px;
+        width: 250px;
+        width: 100%;
+        
+        }
+
+        .songinfo{
+            width: auto;
+        }
+        .songtime{
+            width: auto;
+        }
+
+    .left .close {
+        position: absolute;
+        right: 31px;
+        top: 25px;
+        width: 29px;
+    }
+    .right{
+
+        width: 100vw;
+
+    }
+    
+    .playbar{
+        width: 88vw;
+        
+        
+        
+    }
+
+    
+
+    .abovebar{
+        flex-direction: column;
+        gap: 23px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .seekbar{
+        width: 90%;
+    }
+
+    .hamburger{
+        display: block;
+        
+    }
+
+    .songlist ul li{
+        display: inline-block;
+    }
+
+    .songbuttons
+    {
+        margin-right: 30px;
+    }
+
+    
+    .cardContainer{
+        justify-content: center;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .card{
+        width: 90vw;
+    }
+
+    .right{
+        margin: 0;
+    }
+
+    .info div{
+        word-break: break-all;
+    }
+
+    .left{
+        padding: 0;
+    }
+
+
+}
+
+.timevol{
+
+}
+
+
 
 
