@@ -25,7 +25,7 @@ async function getSongs(folder) {
     div.innerHTML = response;
 
     let as = div.getElementsByTagName("a");
-    let songs = [];
+    songs = [];
 
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
@@ -35,36 +35,9 @@ async function getSongs(folder) {
 
     }
 
-    return songs;
-
-}
-
-const playMusic = ((track, pause = false) => {
-    // let audio = new Audio("/songs/" + track)
-
-    currentSong.src = `/${currentFolder}/` + track
-    if (!pause) {
-        currentSong.play()
-        play.src = "pause.svg"
-    }
-
-    document.querySelector(".songinfo").innerHTML = decodeURI(track)
-    document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
-
-})
-async function main() {
-
-
-
-
-
-
-    //getting the list of all the songs
-    songs = await getSongs("songs/mysongs");
-
-    playMusic(songs[0], true)
-
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
+
+    songUL.innerHTML = "";
 
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li> 
@@ -96,6 +69,37 @@ async function main() {
     });
 
 
+
+    
+
+}
+
+const playMusic = ((track, pause = false) => {
+    // let audio = new Audio("/songs/" + track)
+
+    currentSong.src = `/${currentFolder}/` + track
+    if (!pause) {
+        currentSong.play()
+        play.src = "pause.svg"
+    }
+
+    document.querySelector(".songinfo").innerHTML = decodeURI(track)
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
+
+})
+async function main() {
+
+
+
+
+
+
+    //getting the list of all the songs
+    await getSongs("songs/mysongs");
+
+    playMusic(songs[0], true)
+
+    
 
     //play the first song
 
