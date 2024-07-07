@@ -109,7 +109,7 @@ async function displayAlbums() {
 
 
 
-        if (e.href.includes("/songs/")) {
+        if (e.href.includes("/songs/") && !(e.href.includes(".htaccess"))) {
 
             let folder = e.href.split("/").slice(-1)[0];
             let a = await fetch(`songs/${folder}/info.json`);
